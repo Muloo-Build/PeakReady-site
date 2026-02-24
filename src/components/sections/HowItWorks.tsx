@@ -2,30 +2,30 @@ export default function HowItWorks() {
     const steps = [
         {
             number: "01",
-            title: "Set Your Goal Event",
-            description: "Tell us your target race, current fitness level, and available training hours. We build the macro plan.",
+            title: "Tell Us Where You Are",
+            description: "Share your current riding routine, your goal, and how much time you have each week.",
             image: "/Event.png"
         },
         {
             number: "02",
-            title: "Train & Track Metrics",
-            description: "Follow your daily prescribed workouts, log your RPE, sleep, and wake up to a fresh readiness score.",
+            title: "Follow Your Weekly Plan",
+            description: "Get simple day-by-day guidance you can actually stick to, then log how each ride felt.",
             image: "/Metrics.png"
         },
         {
             number: "03",
-            title: "Sync & Adapt",
-            description: "Automatically pull in Strava data. Our AI compares what you did vs what was planned and adjusts tomorrow.",
+            title: "Ride, Sync, Adjust",
+            description: "Connect Strava if you want, and PeakReady updates your next rides based on what you completed.",
             image: "/Strava.png"
         }
     ]
     return (
-        <section id="how-it-works" className="py-24 bg-brand-dark">
+        <section id="how-it-works" className="py-28 bg-brand-dark">
             <div className="container mx-auto px-4 md:px-6 pt-12">
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">How It <span className="text-gradient">Works</span></h2>
-                    <p className="text-slate-400 text-lg">
-                        Three simple steps to peak performance. We handle the science, you handle the pedals.
+                    <p className="text-slate-400 text-xl">
+                        Three simple steps to get back into riding, build confidence, and stay consistent.
                     </p>
                 </div>
 
@@ -39,7 +39,7 @@ export default function HowItWorks() {
                                 <div className="absolute inset-0 rounded-full bg-brand-cyan/0 group-hover:bg-brand-cyan/5 transition-colors duration-300 pointer-events-none" />
                             </div>
                             <h3 className="text-2xl font-semibold mb-4 text-white">{step.title}</h3>
-                            <p className="text-slate-400 leading-relaxed max-w-sm mb-10">
+                            <p className="text-slate-400 text-[17px] leading-relaxed max-w-sm mb-10">
                                 {step.description}
                             </p>
 

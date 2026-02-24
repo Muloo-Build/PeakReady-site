@@ -35,20 +35,20 @@ export default function Pricing() {
     const currentPricing = pricingData[currency];
 
     // Guard hydration mismatch
-    if (!mounted) return <div className="py-24" />
+    if (!mounted) return <div className="py-28" />
 
     const plans = [
         {
             name: "Free",
             price: currency === "USD" ? "$0" : "R0",
-            description: "Basic tools to log your rides and monitor fatigue manually.",
+            description: "Simple tools to plan your rides and track progress at your own pace.",
             features: [
-                { name: "Core planning & goal event tracker", included: true },
-                { name: "Manual metrics logging (RHR/Fatigue)", included: true },
-                { name: "Basic bike maintenance profiles", included: true },
+                { name: "Simple weekly ride planner", included: true },
+                { name: "Manual check-ins (energy, sleep, soreness)", included: true },
+                { name: "Basic bike maintenance reminders", included: true },
                 { name: "Limited ride history", included: true },
-                { name: "Advanced Strava Sync & Automation", included: false },
-                { name: "In-App AI Coach", included: false },
+                { name: "Automatic Strava sync", included: false },
+                { name: "In-app ride coach", included: false },
             ],
             buttonText: "Start Free",
             popular: false
@@ -59,13 +59,13 @@ export default function Pricing() {
             originalPrice: annual ? currentPricing.standard.yr : currentPricing.standard.mo,
             period: annual ? "/yr" : "/mo",
             savings: "Founders Launch Special",
-            description: "The ultimate AI-powered endurance suite for MTB & gravel riders.",
+            description: "Extra guidance and automation to help you ride more consistently.",
             features: [
-                { name: "In-App AI Coach", included: true, highlight: true },
-                { name: "Advanced Strava insights & sync automation", included: true, highlight: true },
-                { name: "Deep adaptive recommendations", included: true },
-                { name: "Premium presets & full ride history", included: true },
-                { name: "Advanced distance-triggered alerts", included: true },
+                { name: "In-app ride coach", included: true, highlight: true },
+                { name: "Automatic Strava sync and ride matching", included: true, highlight: true },
+                { name: "Weekly plan adjustments based on completed rides", included: true },
+                { name: "Premium templates and full ride history", included: true },
+                { name: "Smart bike maintenance reminders", included: true },
             ],
             buttonText: "Claim Early Access",
             popular: true
@@ -73,19 +73,19 @@ export default function Pricing() {
     ]
 
     return (
-        <section id="pricing" className="py-24 relative overflow-hidden">
+        <section id="pricing" className="py-28 relative overflow-hidden">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-cyan/10 blur-[150px] rounded-full pointer-events-none -z-10" />
 
             <div className="container mx-auto px-4 md:px-6">
                 <div className="bg-brand-purple/10 border border-brand-purple/30 text-brand-purple rounded-lg p-3 mx-auto max-w-2xl text-center text-sm font-medium mb-10 flex items-center justify-center gap-2">
                     <AlertCircle className="w-5 h-5 shrink-0" />
-                    <span>🚀 Founders Club Promo: First 500 users lock in lifetime early-adopter pricing. Let's go!</span>
+                    <span>Founders Club: First 500 riders lock in early-adopter pricing for life.</span>
                 </div>
 
                 <div className="text-center max-w-3xl mx-auto mb-16 relative">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Simple, Honest <span className="text-gradient">Pricing</span></h2>
-                    <p className="text-slate-400 text-lg mb-10">
-                        Start for free, upgrade when you're ready to unlock the full power of AI and Strava integration.
+                    <p className="text-slate-400 text-xl mb-10">
+                        Start free and build momentum. Upgrade when you want more guidance and automatic ride tracking.
                     </p>
 
                     {/* Localization Toggle (Debug / Override) */}
@@ -128,7 +128,7 @@ export default function Pricing() {
 
                             <div className="mb-8 mt-2">
                                 <h3 className="text-2xl font-bold mb-3 text-white">{plan.name}</h3>
-                                <p className="text-slate-400 h-10">{plan.description}</p>
+                                <p className="text-slate-400 text-[17px] leading-relaxed min-h-[52px]">{plan.description}</p>
                             </div>
 
                             <div className="mb-8 border-b border-white/10 pb-8">
@@ -190,12 +190,12 @@ export default function Pricing() {
 
                         {[
                             { name: "Manual plan tracking", free: true, pro: true },
-                            { name: "Basic logging (RPE, Weight)", free: true, pro: true },
-                            { name: "Workout history", free: "30 Days", pro: "Unlimited" },
-                            { name: "Readiness Insights", free: false, pro: true },
-                            { name: "Adaptive Suggestions", free: false, pro: true },
+                            { name: "Basic logging (energy, sleep, weight)", free: true, pro: true },
+                            { name: "Ride history", free: "30 Days", pro: "Unlimited" },
+                            { name: "Plan adjustments", free: false, pro: true },
+                            { name: "Daily guidance suggestions", free: false, pro: true },
                             { name: "Strava Connect + Sync", free: false, pro: true },
-                            { name: "AI Coach & Plan Gen", free: false, pro: true },
+                            { name: "In-app ride coach", free: false, pro: true },
                         ].map((row, idx) => (
                             <div key={idx} className="grid grid-cols-3 border-b border-white/5 last:border-0 p-4 md:p-6 text-sm items-center hover:bg-white/5 transition-colors">
                                 <div className="col-span-1 text-slate-300">{row.name}</div>

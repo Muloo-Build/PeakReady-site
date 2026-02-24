@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/Button"
 
 export default function FinalCTA() {
     return (
-        <section className="py-24 relative overflow-hidden my-12">
+        <section className="py-28 relative overflow-hidden my-12">
             {/* Background container */}
             <div className="absolute inset-0 mx-4 md:mx-6 rounded-[3rem] overflow-hidden">
                 <div className="absolute inset-0 bg-brand-surface border border-white/10" />
@@ -10,7 +10,7 @@ export default function FinalCTA() {
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-cyan/30 blur-[150px] -translate-y-1/2 translate-x-1/3 rounded-full pointer-events-none" />
             </div>
 
-            <div className="container mx-auto px-4 md:px-6 relative z-10 text-center py-16 md:py-24 max-w-4xl">
+            <div className="container mx-auto px-4 md:px-6 relative z-10 text-center py-20 md:py-28 max-w-4xl">
                 <h2 className="text-4xl md:text-6xl font-extrabold mb-8 leading-tight tracking-tight text-white font-outfit">
                     Train Smarter. Recover Better. <br className="hidden md:block" /> Race Ready.
                 </h2>

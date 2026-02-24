@@ -4,35 +4,35 @@ export default function Testimonials() {
     const testimonials = [
         {
             name: "Mike T.",
-            role: "Weekend Warrior",
-            text: "I used to just guess how hard I should ride. PeakReady's AI coach actually told me to take a rest day last week because my fatigue was high. I felt amazing for my long Sunday ride.",
+            role: "Returning Rider",
+            text: "I hadn't ridden consistently in years. PeakReady gave me a simple weekly plan I could actually follow. A few weeks in, riding feels like part of my routine again.",
             rating: 5,
         },
         {
             name: "Sarah L.",
-            role: "Gravel Enthusiast",
-            text: "Getting back into riding after 5 years off. This app is exactly what I needed. It doesn't treat me like a pro racer, it just gives me a sensible plan that adapts when life gets in the way.",
+            role: "Busy Weekend Rider",
+            text: "My schedule is busy, so I needed something realistic. The daily guidance is clear, and when life gets hectic I can pick back up without feeling behind.",
             rating: 5,
         },
         {
             name: "Dave K.",
-            role: "Seasoned Amateur",
-            text: "The Strava sync is flawless. I log my ride, the AI sees I pushed too hard on that climb, and tomorrow's workout is automatically adjusted. It's like having a real coach checking my data.",
+            role: "First-Time Event Rider",
+            text: "I signed up before my first local event. The plan felt approachable from day one, and syncing with Strava made it easy to stay on track.",
             rating: 5,
         }
     ]
 
     return (
-        <section id="testimonials" className="py-24 bg-brand-dark relative overflow-hidden">
+        <section id="testimonials" className="py-28 bg-brand-dark relative overflow-hidden">
             {/* Subtle background glow */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-brand-cyan/5 blur-[120px] rounded-full pointer-events-none -z-10" />
             <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-brand-purple/5 blur-[120px] rounded-full pointer-events-none -z-10" />
 
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Real Riders. <span className="text-gradient">Real Results.</span></h2>
-                    <p className="text-slate-400 text-lg">
-                        Whether you're hitting the local trails or training for a 100-miler gravel race, see how PeakReady helps riders like you.
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6">Real Riders. <span className="text-gradient">Real Progress.</span></h2>
+                    <p className="text-slate-400 text-xl">
+                        From getting back on the bike to building a steady routine, see how everyday riders use PeakReady in real life.
                     </p>
                 </div>
 
@@ -51,7 +51,7 @@ export default function Testimonials() {
                             </div>
 
                             <p className="text-slate-300 leading-relaxed text-lg mb-8 flex-grow">
-                                "{testimonial.text}"
+                                &ldquo;{testimonial.text}&rdquo;
                             </p>
 
                             <div>

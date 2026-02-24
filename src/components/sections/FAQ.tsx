@@ -31,11 +31,11 @@ export default function FAQ() {
     ]
 
     return (
-        <section id="faq" className="py-24 border-t border-white/5">
+        <section id="faq" className="py-28 border-t border-white/5">
             <div className="container mx-auto px-4 md:px-6 max-w-3xl">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Frequently Asked <span className="text-gradient">Questions</span></h2>
-                    <p className="text-slate-400 text-lg">
+                    <p className="text-slate-400 text-xl">
                         Everything you need to know about the product and billing.
                     </p>
                 </div>
@@ -60,7 +60,7 @@ export default function FAQ() {
                                     open === idx ? "max-h-96 pb-6 opacity-100" : "max-h-0 opacity-0"
                                 )}
                             >
-                                <p className="text-slate-400 leading-relaxed pt-2 border-t border-white/5">
+                                <p className="text-slate-400 text-[17px] leading-relaxed pt-2 border-t border-white/5">
                                     {faq.answer}
                                 </p>
                             </div>
