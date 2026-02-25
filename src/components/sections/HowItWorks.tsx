@@ -20,7 +20,7 @@
         }
     ]
     return (
-        <section id="how-it-works" className="py-24 md:py-32 bg-brand-surface relative overflow-hidden">
+        <section id="how-it-works" className="py-32 md:py-40 bg-brand-surface relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto mb-20">
                     <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">How It <span className="text-gradient">Works</span></h2>
@@ -39,12 +39,12 @@
                                 <div className="absolute inset-0 rounded-full bg-brand-cyan/0 group-hover:bg-brand-cyan/10 transition-colors duration-300 pointer-events-none" />
                             </div>
                             <h3 className="text-2xl font-bold mb-4 text-white">{step.title}</h3>
-                            <p className="text-slate-400 text-[15px] leading-relaxed max-w-sm mb-10 min-h-[80px]">
+                            <p className="text-slate-400 text-[15px] leading-[1.7] max-w-sm mb-10 min-h-[80px]">
                                 {step.description}
                             </p>
 
                             {/* Mini Phone Mockup for Step */}
-                            <div className="relative w-full max-w-[240px] mx-auto mt-auto rounded-[2rem] bg-brand-dark border-[6px] border-slate-800 shadow-2xl overflow-hidden aspect-[9/19.5] ring-1 ring-white/10 group-hover:-translate-y-2 transition-transform duration-500">
+                            <div className="relative w-full max-w-[240px] mx-auto mt-auto rounded-[2rem] bg-brand-dark border-[6px] border-slate-800 shadow-[0_12px_30px_rgba(0,0,0,0.3)] overflow-hidden aspect-[9/19.5] ring-1 ring-white/10 group-hover:-translate-y-2 transition-transform duration-500">
                                 {/* Dynamic notch */}
                                 <div className="absolute top-0 inset-x-0 flex justify-center z-20">
                                     <div className="w-1/3 h-4 bg-slate-800 rounded-b-xl" />

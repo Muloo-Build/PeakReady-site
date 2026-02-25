@@ -3,8 +3,7 @@ import { Smartphone } from "lucide-react"
 
 export default function AppStoreLaunch() {
     return (
-        <section className="py-24 md:py-32 bg-brand-cyan/5 border-y border-white/5 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 to-transparent pointer-events-none" />
+        <section className="py-32 md:py-40 bg-brand-cyan/5 border-y border-white/5 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
                 <div className="inline-flex items-center justify-center p-3 bg-brand-dark rounded-2xl border border-white/10 mb-8 shadow-xl">
                     <Smartphone className="w-8 h-8 text-brand-cyan" />
@@ -16,7 +15,7 @@ export default function AppStoreLaunch() {
                 </p>
 
                 <div className="flex flex-col items-center justify-center gap-4 mb-16">
-                    <Button variant="primary" size="lg" className="w-full sm:w-auto text-lg px-8 shadow-[0_0_20px_rgba(0,210,255,0.3)] hover:shadow-[0_0_30px_rgba(0,210,255,0.5)] transition-shadow" href="#early-access">
+                    <Button variant="primary" size="lg" className="w-full sm:w-auto text-lg px-8 shadow-[0_0_16px_rgba(0,210,255,0.22)] hover:shadow-[0_0_24px_rgba(0,210,255,0.34)] transition-shadow" href="#beta-tester">
                         Join Early Access List
                     </Button>
                     <p className="text-brand-cyan font-semibold text-sm md:text-base">Pro features unlocked during beta.</p>

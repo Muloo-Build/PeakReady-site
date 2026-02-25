@@ -2,7 +2,7 @@
 
 export default function SmartLogic() {
     return (
-        <section className="py-24 md:py-32 bg-brand-surface border-y border-white/5 relative overflow-hidden">
+        <section className="py-32 md:py-40 bg-brand-surface border-y border-white/5 relative overflow-hidden">
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-purple/10 via-brand-dark/0 to-transparent pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -45,11 +45,11 @@ export default function SmartLogic() {
                     </div>
 
                     <div className="lg:w-1/2 w-full relative">
-                        <div className="relative rounded-3xl bg-brand-dark border border-white/10 p-6 md:p-8 shadow-2xl overflow-hidden glass-panel">
+                        <div className="relative rounded-3xl bg-brand-dark border border-white/10 p-6 md:p-8 shadow-[0_16px_40px_rgba(0,0,0,0.28)] overflow-hidden glass-panel">
                             <div className="absolute inset-0 bg-topo-overlay opacity-[0.03] pointer-events-none" />
 
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-purple/20 blur-[80px] rounded-full pointer-events-none" />
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-cyan/20 blur-[80px] rounded-full pointer-events-none" />
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-purple/14 blur-[80px] rounded-full pointer-events-none" />
+                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-cyan/14 blur-[80px] rounded-full pointer-events-none" />
 
                             <div className="relative z-10 space-y-4">
                                 <div className="bg-slate-900/80 backdrop-blur border border-white/10 p-4 rounded-xl flex items-center justify-between">

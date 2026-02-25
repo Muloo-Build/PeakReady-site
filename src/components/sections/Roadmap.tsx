@@ -25,7 +25,7 @@ export default function Roadmap() {
     ]
 
     return (
-        <section className="py-24 md:py-32 bg-brand-dark relative">
+        <section className="py-32 md:py-40 bg-brand-dark relative">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">What&apos;s <span className="text-gradient">Coming Next</span></h2>
@@ -40,13 +40,13 @@ export default function Roadmap() {
                 <div className="max-w-4xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {items.map((item, idx) => (
-                            <div key={idx} className="glass-panel p-6 rounded-2xl border border-white/5 flex gap-4 items-start">
+                            <div key={idx} className="glass-panel p-6 rounded-2xl border border-white/5 flex gap-4 items-start shadow-[0_10px_28px_rgba(0,0,0,0.24)]">
                                 <div className="mt-1 bg-brand-surface p-3 rounded-xl border border-white/10 shrink-0">
                                     {item.icon}
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
-                                    <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
+                                    <p className="text-slate-400 text-sm leading-[1.7]">{item.description}</p>
                                 </div>
                             </div>
                         ))}

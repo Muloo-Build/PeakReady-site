@@ -28,9 +28,9 @@ export default function Testimonials() {
     ]
 
     return (
-        <section id="testimonials" className="py-28 bg-brand-dark relative overflow-hidden">
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-brand-cyan/5 blur-[120px] rounded-full pointer-events-none -z-10" />
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-brand-purple/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+        <section id="testimonials" className="py-32 md:py-40 bg-brand-dark relative overflow-hidden">
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[360px] h-[360px] bg-brand-cyan/4 blur-[110px] rounded-full pointer-events-none -z-10" />
+            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[360px] h-[360px] bg-brand-purple/4 blur-[110px] rounded-full pointer-events-none -z-10" />
 
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16">
@@ -44,7 +44,7 @@ export default function Testimonials() {
                     {testimonials.map((testimonial, idx) => (
                         <div
                             key={idx}
-                            className="glass-panel p-8 rounded-2xl relative border border-white/10 flex flex-col hover:border-brand-cyan/30 transition-colors duration-300"
+                            className="glass-panel p-8 rounded-2xl relative border border-white/10 flex flex-col hover:border-brand-cyan/30 transition-colors duration-300 shadow-[0_10px_28px_rgba(0,0,0,0.24)]"
                         >
                             <Quote className="absolute top-6 right-6 w-10 h-10 text-white/5" />
 
@@ -54,7 +54,7 @@ export default function Testimonials() {
                                 </span>
                             )}
 
-                            <p className="text-slate-300 leading-relaxed text-lg mb-6 flex-grow">
+                            <p className="text-slate-300 leading-[1.7] text-lg mb-6 flex-grow">
                                 &ldquo;{testimonial.text}&rdquo;
                             </p>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth dark`}>
       <body className="antialiased min-h-screen flex flex-col bg-brand-darker text-slate-100 font-sans">
+        <Script id="hubspot-tracking" src="https://js.hs-scripts.com/8066413.js" strategy="afterInteractive" />
         {children}
       </body>
     </html>

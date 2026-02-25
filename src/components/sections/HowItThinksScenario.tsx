@@ -12,7 +12,7 @@
     ]
 
     return (
-        <section className="py-20 md:py-24 bg-brand-dark border-b border-white/5">
+        <section className="py-28 md:py-32 bg-brand-dark border-b border-white/5">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-6 text-center">

@@ -46,7 +46,7 @@ export default function Pricing() {
                 { name: "In-app ride coach", included: false }
             ],
             buttonText: "Join Free",
-            buttonHref: "#early-access",
+            buttonHref: "#beta-tester",
             popular: false
         },
         {
@@ -63,14 +63,14 @@ export default function Pricing() {
                 { name: "Pro features unlocked during beta", included: true, highlight: true }
             ],
             buttonText: "Join Early Access",
-            buttonHref: "#early-access",
+            buttonHref: "#beta-tester",
             popular: true
         }
     ]
 
     return (
-        <section id="pricing" className="py-28 relative overflow-hidden">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-cyan/10 blur-[150px] rounded-full pointer-events-none -z-10" />
+        <section id="pricing" className="py-32 md:py-40 relative overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[560px] h-[560px] bg-brand-cyan/7 blur-[140px] rounded-full pointer-events-none -z-10" />
 
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16 relative">
@@ -116,7 +116,7 @@ export default function Pricing() {
                             key={idx}
                             className={cn(
                                 "glass-panel rounded-3xl p-8 md:p-10 relative flex flex-col",
-                                plan.popular ? "border-brand-purple/40 shadow-[0_0_40px_rgba(178,63,255,0.15)] md:-translate-y-4 bg-brand-dark/50" : "border-white/10"
+                                plan.popular ? "border-brand-purple/40 shadow-[0_0_32px_rgba(178,63,255,0.12)] md:-translate-y-4 bg-brand-dark/50" : "border-white/10"
                             )}
                         >
                             <div className="mb-8 mt-2">
