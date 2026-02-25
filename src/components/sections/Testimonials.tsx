@@ -3,13 +3,15 @@
 export default function Testimonials() {
     const testimonials = [
         {
-            name: "Lauren Mitchell",
-            location: "Bend, OR",
+            name: "Michael D",
+            location: "Cape Town",
             riderType: "Returning MTB Rider",
-            text: "I had fallen out of routine for almost a year. PeakReady gave me a weekly target I could follow, and consistency came back.",
+            event: "Wines2Whales 60km",
+            result: "Completed Wines2Whales 60km after rebuilding consistency.",
+            text: "After 2 years off the bike, PeakReady got me back to consistent riding without wrecking myself.",
             tag: "Beta Rider",
-            statLabel: "Weekly consistency",
-            statValue: "8 weeks logged in a row"
+            statLabel: "Strava consistency",
+            statValue: "9 weeks logged in a row"
         },
         {
             name: "Carlos Ramirez",
@@ -55,6 +57,15 @@ export default function Testimonials() {
                             <p className="text-slate-300 leading-relaxed text-lg mb-6 flex-grow">
                                 &ldquo;{testimonial.text}&rdquo;
                             </p>
+
+                            {"event" in testimonial && testimonial.event && (
+                                <p className="text-slate-300 text-sm mb-2">
+                                    Event: <span className="font-semibold text-white">{testimonial.event}</span>
+                                </p>
+                            )}
+                            {"result" in testimonial && testimonial.result && (
+                                <p className="text-slate-400 text-sm mb-5">{testimonial.result}</p>
+                            )}
 
                             {testimonial.statLabel && testimonial.statValue && (
                                 <div className="mb-6 bg-slate-900/70 border border-white/10 rounded-lg p-3">

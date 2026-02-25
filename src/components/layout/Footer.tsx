@@ -1,4 +1,4 @@
-﻿import { Activity, Twitter, Instagram, Github } from "lucide-react"
+﻿import { Activity } from "lucide-react"
 
 export default function Footer() {
     return (
@@ -12,8 +12,11 @@ export default function Footer() {
                             </div>
                             <span className="text-xl font-bold tracking-tight text-white font-outfit">PeakReady</span>
                         </a>
-                        <p className="text-slate-400 max-w-sm">
-                            The premier MTB endurance training app. Train smarter. Recover better. Race ready.
+                        <p className="text-slate-400 max-w-md mb-3">
+                            PeakReady is currently in active public beta. Built and tested by everyday MTB riders.
+                        </p>
+                        <p className="text-slate-400 max-w-md">
+                            Built for everyday MTB riders training toward real events.
                         </p>
                     </div>
 
@@ -23,15 +26,17 @@ export default function Footer() {
                             <li><a href="#features" className="text-slate-400 hover:text-brand-neon transition-colors">Features</a></li>
                             <li><a href="#pricing" className="text-slate-400 hover:text-brand-neon transition-colors">Pricing</a></li>
                             <li><a href="#how-it-works" className="text-slate-400 hover:text-brand-neon transition-colors">How it Works</a></li>
+                            <li><a href="#beta-tester" className="text-slate-400 hover:text-brand-neon transition-colors">Beta Tester</a></li>
                         </ul>
                     </div>
 
                     <div>
-                        <h4 className="font-semibold text-white mb-4">Legal</h4>
+                        <h4 className="font-semibold text-white mb-4">Contact</h4>
                         <ul className="space-y-2">
-                            <li><a href="#" className="text-slate-400 hover:text-brand-neon transition-colors">Privacy Policy</a></li>
-                            <li><a href="#" className="text-slate-400 hover:text-brand-neon transition-colors">Terms of Service</a></li>
-                            <li><a href="#" className="text-slate-400 hover:text-brand-neon transition-colors">Contact</a></li>
+                            <li><a href="mailto:jarrud@muloo.co" className="text-slate-400 hover:text-brand-neon transition-colors">jarrud@muloo.co</a></li>
+                            <li><a href="#" className="text-slate-400 hover:text-brand-neon transition-colors">Instagram (placeholder)</a></li>
+                            <li><a href="#" className="text-slate-400 hover:text-brand-neon transition-colors">Strava Club (placeholder)</a></li>
+                            <li><a href="#" className="text-slate-400 hover:text-brand-neon transition-colors">X / Twitter (placeholder)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -39,16 +44,14 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/5 text-sm text-slate-500">
                     <div className="text-center md:text-left">
                         <p>© {new Date().getFullYear()} PeakReady. All rights reserved.</p>
-                        <p className="text-slate-500 mt-1">PeakReady is currently in public beta.</p>
                     </div>
                     <div className="flex items-center gap-4 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-                        <a href="#" className="hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
-                        <a href="#" className="hover:text-white transition-colors"><Github className="w-5 h-5" /></a>
+                        <a href="#" className="hover:text-white transition-colors">Instagram</a>
+                        <a href="#" className="hover:text-white transition-colors">Strava</a>
+                        <a href="#" className="hover:text-white transition-colors">X</a>
                     </div>
                 </div>
             </div>
         </footer>
     )
 }
-

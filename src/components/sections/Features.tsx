@@ -1,4 +1,4 @@
-﻿import { BrainCircuit, LineChart, Target, Zap, ActivitySquare, MessageSquare } from "lucide-react"
+﻿import { ChainringIcon, ElevationLineIcon, TrailMarkerIcon } from "@/components/ui/MtbIcons"
 
 export default function Features() {
     const features = [
@@ -7,42 +7,42 @@ export default function Features() {
             description: "Set your event date and available days to generate a week-by-week build to race day.",
             capabilities: ["Targets XC, marathon, and gravel formats", "Schedules build, recovery, and taper blocks", "Recalculates timeline if event date changes"],
             benefit: "Know exactly what to ride this week to arrive prepared on race day.",
-            icon: <Target className="w-6 h-6 text-brand-cyan" />,
+            icon: <TrailMarkerIcon className="text-brand-cyan" />,
         },
         {
             title: "AI Plan Generation",
             description: "Answer a few questions once and get a weekly plan matched to your fitness and schedule.",
             capabilities: ["Uses Strava history as your baseline", "Adjusts progression for age and inactivity", "Builds workload toward your event date"],
             benefit: "Start with a realistic plan on day one without building spreadsheets.",
-            icon: <BrainCircuit className="w-6 h-6 text-brand-purple" />,
+            icon: <ChainringIcon className="text-brand-purple" />,
         },
         {
             title: "Strava Sync",
             description: "Connect Strava and completed rides log automatically against planned sessions in one clean weekly view.",
             capabilities: ["Imports distance, elevation, duration, and effort", "Matches each ride to the planned workout", "Flags missed and completed sessions quickly"],
             benefit: "Your training log stays current without manual data entry.",
-            icon: <LineChart className="w-6 h-6 text-brand-cyan" />,
+            icon: <ElevationLineIcon className="text-brand-cyan" />,
         },
         {
             title: "Adaptive Plan Adjustments",
             description: "Miss a workout or log fatigue, and the app recalibrates your next sessions automatically.",
             capabilities: ["Swaps hard days when recovery is low", "Ramps back gradually after inactivity", "Protects key sessions before event day"],
             benefit: "Stay consistent without guessing how to reshuffle your training week.",
-            icon: <ActivitySquare className="w-6 h-6 text-brand-purple" />,
+            icon: <ElevationLineIcon className="text-brand-purple" />,
         },
         {
             title: "Daily Readiness Check-ins",
             description: "Log sleep, soreness, and energy in seconds to guide the day-to-day ride intensity.",
             capabilities: ["Quick inputs for morning and post-ride", "Generates a simple readiness trend", "Highlights when to push or back off"],
             benefit: "Avoid fatigue spirals before they derail your training block.",
-            icon: <Zap className="w-6 h-6 text-brand-cyan" />,
+            icon: <ChainringIcon className="text-brand-cyan" />,
         },
         {
             title: "Coach Chat",
             description: "Ask plan-specific questions anytime and get guidance based on your event, history, and current week.",
             capabilities: ["Suggests swaps for weather or schedule changes", "Explains workout intent in plain language", "Answers fueling and pacing questions"],
             benefit: "Get useful coaching input in the moment instead of stalling your plan.",
-            icon: <MessageSquare className="w-6 h-6 text-brand-purple" />,
+            icon: <TrailMarkerIcon className="text-brand-purple" />,
         }
     ]
 
@@ -57,11 +57,11 @@ export default function Features() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-8 md:gap-y-10">
                     {features.map((feature, idx) => (
                         <div
                             key={idx}
-                            className="glass-panel p-8 rounded-2xl hover:-translate-y-1 transition-all duration-300 group border border-white/5 hover:border-brand-purple/30 bg-white/5 backdrop-blur-sm"
+                            className="glass-panel p-8 rounded-2xl hover:-translate-y-1.5 hover:shadow-[0_18px_44px_rgba(0,0,0,0.35)] transition-all duration-300 group border border-white/5 hover:border-brand-purple/30 bg-white/5 backdrop-blur-sm"
                         >
                             <div className="bg-brand-surface w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(178,63,255,0.2)] transition-all duration-300 border border-white/10">
                                 {feature.icon}
@@ -73,7 +73,7 @@ export default function Features() {
 
                             <ul className="space-y-2 mb-6 border-l-2 border-white/10 pl-4 py-1">
                                 {feature.capabilities.map((cap, cIdx) => (
-                                    <li key={cIdx} className="text-sm font-medium text-slate-300 flex items-center gap-2">
+                                    <li key={cIdx} className="text-[13px] font-medium text-slate-300 flex items-center gap-2">
                                         <div className="w-1.5 h-1.5 rounded-full bg-brand-cyan/70 shrink-0" />
                                         {cap}
                                     </li>
@@ -92,4 +92,3 @@ export default function Features() {
         </section>
     )
 }
-

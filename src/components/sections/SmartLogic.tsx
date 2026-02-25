@@ -46,7 +46,7 @@ export default function SmartLogic() {
 
                     <div className="lg:w-1/2 w-full relative">
                         <div className="relative rounded-3xl bg-brand-dark border border-white/10 p-6 md:p-8 shadow-2xl overflow-hidden glass-panel">
-                            <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTIgMmMwLTEuMS45LTIgMi0yaDMydmgySDRDMi45IDIgMiAyLjkgMiA0djMySDBWMnoiIGZpbGw9IiNmZmZiZmYiLz48L3N2Zz4=')]" />
+                            <div className="absolute inset-0 bg-topo-overlay opacity-[0.03] pointer-events-none" />
 
                             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-purple/20 blur-[80px] rounded-full pointer-events-none" />
                             <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-cyan/20 blur-[80px] rounded-full pointer-events-none" />

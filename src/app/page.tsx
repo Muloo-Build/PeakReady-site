@@ -11,6 +11,7 @@ import AppStoreLaunch from "@/components/sections/AppStoreLaunch"
 import Roadmap from "@/components/sections/Roadmap"
 import Testimonials from "@/components/sections/Testimonials"
 import FAQ from "@/components/sections/FAQ"
+import BetaTesterSection from "@/components/sections/BetaTesterSection"
 import FinalCTA from "@/components/sections/FinalCTA"
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
         <Roadmap />
         <Testimonials />
         <FAQ />
+        <BetaTesterSection />
         <FinalCTA />
       </main>
       <Footer />

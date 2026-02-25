@@ -1,7 +1,7 @@
 ﻿"use client"
 
 import { useState } from "react"
-import { Check, X } from "lucide-react"
+import { Check, Lock, X } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { cn } from "@/lib/utils"
 
@@ -74,9 +74,12 @@ export default function Pricing() {
 
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16 relative">
+                    <p className="text-brand-cyan text-sm md:text-base font-semibold mb-5">
+                        Currently free during beta for approved testers.
+                    </p>
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Simple, Honest <span className="text-gradient">Pricing</span></h2>
                     <p className="text-slate-400 text-lg md:text-xl mb-10">
-                        Start free and upgrade when you want adaptive planning and automatic sync.
+                        We are still refining the product with riders. Pricing below is planned and shown for transparency.
                     </p>
 
                     {/* Localization Toggle (Debug / Override) */}
@@ -106,6 +109,7 @@ export default function Pricing() {
                     </p>
                 </div>
 
+                <p className="text-center text-xs uppercase tracking-wider text-slate-500 mb-5">Planned post-beta pricing</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
                     {plans.map((plan, idx) => (
                         <div
@@ -118,6 +122,11 @@ export default function Pricing() {
                             <div className="mb-8 mt-2">
                                 <h3 className="text-2xl font-bold mb-3 text-white">{plan.name}</h3>
                                 <p className="text-slate-400 text-[17px] leading-relaxed min-h-[52px]">{plan.description}</p>
+                                {plan.name === "Pro" && (
+                                    <p className="text-brand-cyan text-xs mt-3 font-medium">
+                                        Beta testers receive Pro access while we refine the product.
+                                    </p>
+                                )}
                             </div>
 
                             <div className="mb-8 border-b border-white/10 pb-8">
@@ -134,6 +143,11 @@ export default function Pricing() {
                                 </div>
                                 {plan.name === "Pro" && annual && currency === "ZAR" && (
                                     <p className="text-brand-cyan text-sm mt-3 font-medium">Save R89 per year compared to monthly.</p>
+                                )}
+                                {plan.name === "Pro" && (
+                                    <p className="text-slate-400 text-xs mt-2">
+                                        {annual ? "Most popular for riders training toward an event." : "Flexible option."}
+                                    </p>
                                 )}
                             </div>
 
@@ -169,7 +183,10 @@ export default function Pricing() {
                     ))}
                 </div>
 
-                <p className="text-center text-sm text-slate-400 mb-16">Cancel anytime. Early beta pricing locked in.</p>
+                <p className="text-center text-sm text-slate-400 mb-16 inline-flex items-center justify-center gap-2 w-full">
+                    <Lock className="w-4 h-4 text-slate-400" />
+                    <span>Cancel anytime. Early beta pricing locked in.</span>
+                </p>
 
                 {/* Comparison Table */}
                 <div className="max-w-4xl mx-auto">
