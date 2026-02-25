@@ -16,6 +16,10 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "PeakReady | Train Smarter. Recover Better. Race Ready.",
   description: "PeakReady is the premier MTB endurance training app. Sync with Strava, get AI-guided plans, and crush your goal events.",
+  icons: {
+    icon: [{ url: "/favicon.png", sizes: "32x32", type: "image/png" }],
+    apple: [{ url: "/favicon.png", sizes: "180x180", type: "image/png" }],
+  },
   alternates: {
     canonical: "https://www.peakready.app"
   },

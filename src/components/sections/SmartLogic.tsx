@@ -6,7 +6,7 @@ export default function SmartLogic() {
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-purple/10 via-brand-dark/0 to-transparent pointer-events-none" />
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div className="flex flex-col lg:flex-row items-center lg:items-center gap-12 lg:gap-20">
                     <div className="lg:w-1/2">
                         <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">Smart Logic That Actually <br className="hidden lg:block" /><span className="text-gradient">Understands You</span></h2>
                         <p className="text-slate-400 text-lg leading-relaxed mb-8">
@@ -44,7 +44,7 @@ export default function SmartLogic() {
                         </div>
                     </div>
 
-                    <div className="lg:w-1/2 w-full relative">
+                    <div className="lg:w-1/2 w-full max-w-[520px] mx-auto lg:mx-0 self-center relative">
                         <div className="relative rounded-3xl bg-brand-dark border border-white/10 p-6 md:p-8 shadow-[0_16px_40px_rgba(0,0,0,0.28)] overflow-hidden glass-panel">
                             <div className="absolute inset-0 bg-topo-overlay opacity-[0.03] pointer-events-none" />
 

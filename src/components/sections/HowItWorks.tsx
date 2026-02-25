@@ -1,4 +1,6 @@
-﻿export default function HowItWorks() {
+import Image from "next/image"
+
+export default function HowItWorks() {
     const steps = [
         {
             number: "01",
@@ -19,6 +21,7 @@
             image: "/Strava.png"
         }
     ]
+
     return (
         <section id="how-it-works" className="py-32 md:py-40 bg-brand-surface relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
@@ -43,13 +46,11 @@
                                 {step.description}
                             </p>
 
-                            {/* Mini Phone Mockup for Step */}
-                            <div className="relative w-full max-w-[240px] mx-auto mt-auto rounded-[2rem] bg-brand-dark border-[6px] border-slate-800 shadow-[0_12px_30px_rgba(0,0,0,0.3)] overflow-hidden aspect-[9/19.5] ring-1 ring-white/10 group-hover:-translate-y-2 transition-transform duration-500">
-                                {/* Dynamic notch */}
+                            <div className="relative w-full max-w-[180px] md:max-w-[220px] mx-auto mt-auto rounded-[18px] bg-brand-dark border-[6px] border-slate-800 shadow-[0_10px_24px_rgba(0,0,0,0.22)] overflow-hidden aspect-[9/19.5] ring-1 ring-white/10 group-hover:-translate-y-2 transition-transform duration-500">
                                 <div className="absolute top-0 inset-x-0 flex justify-center z-20">
                                     <div className="w-1/3 h-4 bg-slate-800 rounded-b-xl" />
                                 </div>
-                                <img src={step.image} alt={step.title} className="w-full h-full object-cover" />
+                                <Image src={step.image} alt={step.title} fill className="object-cover" />
                             </div>
                         </div>
                     ))}
@@ -58,4 +59,3 @@
         </section>
     )
 }
-

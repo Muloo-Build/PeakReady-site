@@ -1,8 +1,8 @@
 ﻿"use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
-import { Logo } from "@/components/ui/Logo"
 import { Button } from "@/components/ui/Button"
 import { cn } from "@/lib/utils"
 
@@ -33,7 +33,13 @@ export default function Navbar() {
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
                 <a href="#" className="flex items-center gap-2 group">
                     <div className="w-8 h-8 group-hover:drop-shadow-[0_0_15px_rgba(0,210,255,0.5)] transition-all">
-                        <Logo className="w-full h-full" />
+                        <Image
+                            src="/favicon.png"
+                            alt="PeakReady logo"
+                            width={32}
+                            height={32}
+                            className="w-full h-full rounded-lg"
+                        />
                     </div>
                     <span className="text-xl font-bold tracking-tight text-white font-outfit">PeakReady</span>
                     <span className="text-[10px] uppercase tracking-wider text-brand-cyan border border-brand-cyan/40 bg-brand-cyan/10 px-2 py-0.5 rounded-full">Beta</span>
