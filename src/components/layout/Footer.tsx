@@ -1,4 +1,4 @@
-import { Activity, Twitter, Instagram, Github } from "lucide-react"
+﻿import { Activity, Twitter, Instagram, Github } from "lucide-react"
 
 export default function Footer() {
     return (
@@ -37,7 +37,10 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/5 text-sm text-slate-500">
-                    <p>© {new Date().getFullYear()} PeakReady. All rights reserved.</p>
+                    <div className="text-center md:text-left">
+                        <p>© {new Date().getFullYear()} PeakReady. All rights reserved.</p>
+                        <p className="text-slate-500 mt-1">PeakReady is currently in public beta.</p>
+                    </div>
                     <div className="flex items-center gap-4 mt-4 md:mt-0">
                         <a href="#" className="hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
                         <a href="#" className="hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
@@ -48,3 +51,4 @@ export default function Footer() {
         </footer>
     )
 }
+

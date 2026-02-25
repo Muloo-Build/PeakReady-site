@@ -1,25 +1,23 @@
-"use client"
+﻿"use client"
 
-import { useState, useEffect } from "react"
-import { Check, X, AlertCircle } from "lucide-react"
+import { useState } from "react"
+import { Check, X } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { cn } from "@/lib/utils"
 
-type Currency = 'USD' | 'ZAR';
+type Currency = "USD" | "ZAR"
+
+function detectDefaultCurrency(): Currency {
+    try {
+        return Intl.DateTimeFormat().resolvedOptions().timeZone.includes("Africa") ? "ZAR" : "USD"
+    } catch {
+        return "USD"
+    }
+}
 
 export default function Pricing() {
     const [annual, setAnnual] = useState(true)
-    const [currency, setCurrency] = useState<Currency>('USD')
-    const [mounted, setMounted] = useState(false)
-
-    useEffect(() => {
-        setMounted(true)
-        try {
-            if (Intl.DateTimeFormat().resolvedOptions().timeZone.includes('Africa')) {
-                setCurrency('ZAR')
-            }
-        } catch (e) { }
-    }, [])
+    const [currency, setCurrency] = useState<Currency>(detectDefaultCurrency)
 
     const pricingData = {
         USD: {
@@ -27,30 +25,28 @@ export default function Pricing() {
             standard: { mo: "$11.99", yr: "$99" }
         },
         ZAR: {
-            promo: { mo: "R149", yr: "R1199" },
-            standard: { mo: "R199", yr: "R1499" }
+            promo: { mo: "R49", yr: "R499" },
+            standard: { mo: "R99", yr: "R890" }
         }
     }
 
-    const currentPricing = pricingData[currency];
-
-    // Guard hydration mismatch
-    if (!mounted) return <div className="py-28" />
+    const currentPricing = pricingData[currency]
 
     const plans = [
         {
             name: "Free",
             price: currency === "USD" ? "$0" : "R0",
-            description: "Simple tools to plan your rides and track progress at your own pace.",
+            description: "Core planning, metrics, and manual ride workflow.",
             features: [
                 { name: "Simple weekly ride planner", included: true },
                 { name: "Manual check-ins (energy, sleep, soreness)", included: true },
                 { name: "Basic bike maintenance reminders", included: true },
                 { name: "Limited ride history", included: true },
                 { name: "Automatic Strava sync", included: false },
-                { name: "In-app ride coach", included: false },
+                { name: "In-app ride coach", included: false }
             ],
-            buttonText: "Start Free",
+            buttonText: "Join Free",
+            buttonHref: "#early-access",
             popular: false
         },
         {
@@ -58,16 +54,16 @@ export default function Pricing() {
             price: annual ? currentPricing.promo.yr : currentPricing.promo.mo,
             originalPrice: annual ? currentPricing.standard.yr : currentPricing.standard.mo,
             period: annual ? "/yr" : "/mo",
-            savings: "Founders Launch Special",
-            description: "Extra guidance and automation to help you ride more consistently.",
+            description: "Full AI plan generation, adaptive swaps, and smart Strava sync.",
             features: [
-                { name: "In-app ride coach", included: true, highlight: true },
-                { name: "Automatic Strava sync and ride matching", included: true, highlight: true },
-                { name: "Weekly plan adjustments based on completed rides", included: true },
-                { name: "Premium templates and full ride history", included: true },
-                { name: "Smart bike maintenance reminders", included: true },
+                { name: "AI Plan Generation", included: true, highlight: true },
+                { name: "Adaptive Fatigue Swaps", included: true, highlight: true },
+                { name: "Smart Strava Sync", included: true },
+                { name: "Coach Chat", included: true },
+                { name: "Pro features unlocked during beta", included: true, highlight: true }
             ],
-            buttonText: "Claim Early Access",
+            buttonText: "Join Early Access",
+            buttonHref: "#early-access",
             popular: true
         }
     ]
@@ -77,25 +73,20 @@ export default function Pricing() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-cyan/10 blur-[150px] rounded-full pointer-events-none -z-10" />
 
             <div className="container mx-auto px-4 md:px-6">
-                <div className="bg-brand-purple/10 border border-brand-purple/30 text-brand-purple rounded-lg p-3 mx-auto max-w-2xl text-center text-sm font-medium mb-10 flex items-center justify-center gap-2">
-                    <AlertCircle className="w-5 h-5 shrink-0" />
-                    <span>Founders Club: First 500 riders lock in early-adopter pricing for life.</span>
-                </div>
-
                 <div className="text-center max-w-3xl mx-auto mb-16 relative">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Simple, Honest <span className="text-gradient">Pricing</span></h2>
-                    <p className="text-slate-400 text-xl mb-10">
-                        Start free and build momentum. Upgrade when you want more guidance and automatic ride tracking.
+                    <p className="text-slate-400 text-lg md:text-xl mb-10">
+                        Start free and upgrade when you want adaptive planning and automatic sync.
                     </p>
 
                     {/* Localization Toggle (Debug / Override) */}
                     <div className="absolute top-0 right-0 hidden md:flex items-center gap-2 text-xs">
                         <span className="text-slate-500">Currency:</span>
-                        <button onClick={() => setCurrency('USD')} className={cn("px-2 py-1 rounded", currency === 'USD' ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-white')}>USD</button>
-                        <button onClick={() => setCurrency('ZAR')} className={cn("px-2 py-1 rounded", currency === 'ZAR' ? 'bg-slate-800 text-white' : 'text-slate-400 hover:text-white')}>ZAR</button>
+                        <button onClick={() => setCurrency("USD")} className={cn("px-2 py-1 rounded", currency === "USD" ? "bg-slate-800 text-white" : "text-slate-400 hover:text-white")}>USD</button>
+                        <button onClick={() => setCurrency("ZAR")} className={cn("px-2 py-1 rounded", currency === "ZAR" ? "bg-slate-800 text-white" : "text-slate-400 hover:text-white")}>ZAR</button>
                     </div>
 
-                    <div className="inline-flex items-center gap-2 bg-brand-surface p-1.5 rounded-full border border-white/10 relative z-10">
+                    <div className="inline-flex items-center gap-2 bg-brand-surface p-1.5 rounded-full border border-white/10 relative z-10 mb-8">
                         <button
                             onClick={() => setAnnual(false)}
                             className={cn("px-6 py-2.5 rounded-full text-sm font-medium transition-colors", !annual ? "bg-brand-darker text-white shadow-sm" : "text-slate-400 hover:text-white")}
@@ -104,14 +95,18 @@ export default function Pricing() {
                         </button>
                         <button
                             onClick={() => setAnnual(true)}
-                            className={cn("px-6 py-2.5 rounded-full text-sm font-medium transition-colors flex items-center gap-2", annual ? "bg-brand-darker text-white shadow-sm" : "text-slate-400 hover:text-white")}
+                            className={cn("px-6 py-2.5 rounded-full text-sm font-medium transition-colors", annual ? "bg-brand-darker text-white shadow-sm" : "text-slate-400 hover:text-white")}
                         >
-                            Annual <span className="text-white text-xs px-2 py-0.5 rounded-full bg-gradient-brand font-bold">Save ~31%</span>
+                            Annual
                         </button>
                     </div>
+
+                    <p className="text-slate-300 text-sm md:text-base font-medium">
+                        Simple pricing. No hidden upgrades. No per-session fees.
+                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
                     {plans.map((plan, idx) => (
                         <div
                             key={idx}
@@ -120,12 +115,6 @@ export default function Pricing() {
                                 plan.popular ? "border-brand-purple/40 shadow-[0_0_40px_rgba(178,63,255,0.15)] md:-translate-y-4 bg-brand-dark/50" : "border-white/10"
                             )}
                         >
-                            {plan.popular && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-brand text-white px-4 py-1 rounded-full text-sm font-bold tracking-wide shadow-lg whitespace-nowrap">
-                                    FOUNDERS CLUB
-                                </div>
-                            )}
-
                             <div className="mb-8 mt-2">
                                 <h3 className="text-2xl font-bold mb-3 text-white">{plan.name}</h3>
                                 <p className="text-slate-400 text-[17px] leading-relaxed min-h-[52px]">{plan.description}</p>
@@ -143,11 +132,9 @@ export default function Pricing() {
                                         {plan.period && <span className="text-slate-400 text-lg mb-1">{plan.period}</span>}
                                     </div>
                                 </div>
-                                {plan.savings ? (
-                                    <div className="text-brand-cyan text-sm mt-3 font-medium flex items-center gap-1">
-                                        <Zap className="w-4 h-4 inline" /> {plan.savings}
-                                    </div>
-                                ) : <div className="h-5 mt-3" />}
+                                {plan.name === "Pro" && annual && currency === "ZAR" && (
+                                    <p className="text-brand-cyan text-sm mt-3 font-medium">Save R89 per year compared to monthly.</p>
+                                )}
                             </div>
 
                             <ul className="space-y-4 mb-10 flex-grow">
@@ -161,7 +148,7 @@ export default function Pricing() {
                                         <span className={cn(
                                             "text-sm leading-relaxed",
                                             feature.included ? "text-slate-200" : "text-slate-500",
-                                            'highlight' in feature && feature.highlight ? "font-semibold text-white" : ""
+                                            "highlight" in feature && feature.highlight ? "font-semibold text-white" : ""
                                         )}>
                                             {feature.name}
                                         </span>
@@ -169,12 +156,20 @@ export default function Pricing() {
                                 ))}
                             </ul>
 
-                            <Button variant={plan.popular ? "primary" : "secondary"} size="lg" className="w-full" href={plan.popular ? "https://web.peakready.app/signup?plan=pro" : "https://web.peakready.app/signup"}>
+                            <Button variant={plan.popular ? "primary" : "secondary"} size="lg" className="w-full" href={plan.buttonHref}>
                                 {plan.buttonText}
                             </Button>
+
+                            {plan.popular && (
+                                <p className="text-center text-xs text-slate-500 mt-4">
+                                    No credit card required to start.
+                                </p>
+                            )}
                         </div>
                     ))}
                 </div>
+
+                <p className="text-center text-sm text-slate-400 mb-16">Cancel anytime. Early beta pricing locked in.</p>
 
                 {/* Comparison Table */}
                 <div className="max-w-4xl mx-auto">
@@ -200,10 +195,10 @@ export default function Pricing() {
                             <div key={idx} className="grid grid-cols-3 border-b border-white/5 last:border-0 p-4 md:p-6 text-sm items-center hover:bg-white/5 transition-colors">
                                 <div className="col-span-1 text-slate-300">{row.name}</div>
                                 <div className="col-span-1 text-center flex justify-center text-slate-400">
-                                    {typeof row.free === 'boolean' ? (row.free ? <Check className="w-5 h-5 text-slate-400" /> : <X className="w-5 h-5 text-slate-600" />) : row.free}
+                                    {typeof row.free === "boolean" ? (row.free ? <Check className="w-5 h-5 text-slate-400" /> : <X className="w-5 h-5 text-slate-600" />) : row.free}
                                 </div>
                                 <div className="col-span-1 text-center flex justify-center text-white">
-                                    {typeof row.pro === 'boolean' ? (row.pro ? <Check className="w-5 h-5 text-brand-cyan" /> : <X className="w-5 h-5 text-slate-600" />) : row.pro}
+                                    {typeof row.pro === "boolean" ? (row.pro ? <Check className="w-5 h-5 text-brand-cyan" /> : <X className="w-5 h-5 text-slate-600" />) : row.pro}
                                 </div>
                             </div>
                         ))}
@@ -213,7 +208,4 @@ export default function Pricing() {
         </section>
     )
 }
-// Required dummy component Zap for quick render fix
-function Zap(props: any) {
-    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
-}
+

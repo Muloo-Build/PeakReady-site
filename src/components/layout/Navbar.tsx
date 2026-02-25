@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
@@ -36,6 +36,7 @@ export default function Navbar() {
                         <Logo className="w-full h-full" />
                     </div>
                     <span className="text-xl font-bold tracking-tight text-white font-outfit">PeakReady</span>
+                    <span className="text-[10px] uppercase tracking-wider text-brand-cyan border border-brand-cyan/40 bg-brand-cyan/10 px-2 py-0.5 rounded-full">Beta</span>
                 </a>
 
                 {/* Desktop Nav */}
@@ -83,3 +84,4 @@ export default function Navbar() {
         </header>
     )
 }
+

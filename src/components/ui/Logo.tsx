@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-interface LogoProps extends React.SVGProps<SVGSVGElement> { }
+type LogoProps = React.SVGProps<SVGSVGElement>
 
 export function Logo({ className, ...props }: LogoProps) {
     return (

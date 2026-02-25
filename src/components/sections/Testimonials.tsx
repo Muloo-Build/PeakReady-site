@@ -1,30 +1,32 @@
-import { Star, Quote } from "lucide-react"
+﻿import { Quote } from "lucide-react"
 
 export default function Testimonials() {
     const testimonials = [
         {
-            name: "Mike T.",
-            role: "Returning Rider",
-            text: "I hadn't ridden consistently in years. PeakReady gave me a simple weekly plan I could actually follow. A few weeks in, riding feels like part of my routine again.",
-            rating: 5,
+            name: "Lauren Mitchell",
+            location: "Bend, OR",
+            riderType: "Returning MTB Rider",
+            text: "I had fallen out of routine for almost a year. PeakReady gave me a weekly target I could follow, and consistency came back.",
+            tag: "Beta Rider",
+            statLabel: "Weekly consistency",
+            statValue: "8 weeks logged in a row"
         },
         {
-            name: "Sarah L.",
-            role: "Busy Weekend Rider",
-            text: "My schedule is busy, so I needed something realistic. The daily guidance is clear, and when life gets hectic I can pick back up without feeling behind.",
-            rating: 5,
+            name: "Carlos Ramirez",
+            location: "Boise, ID",
+            riderType: "Marathon Event Rider",
+            text: "I used PeakReady for a 60km marathon build. The plan stayed realistic when work got busy, and I finished prepared."
         },
         {
-            name: "Dave K.",
-            role: "First-Time Event Rider",
-            text: "I signed up before my first local event. The plan felt approachable from day one, and syncing with Strava made it easy to stay on track.",
-            rating: 5,
+            name: "Hannah Doyle",
+            location: "Fort Collins, CO",
+            riderType: "Weekend Trail Rider",
+            text: "I wanted structure without coach-level complexity. The day-to-day guidance helped me keep momentum instead of skipping weeks."
         }
     ]
 
     return (
         <section id="testimonials" className="py-28 bg-brand-dark relative overflow-hidden">
-            {/* Subtle background glow */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-brand-cyan/5 blur-[120px] rounded-full pointer-events-none -z-10" />
             <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-brand-purple/5 blur-[120px] rounded-full pointer-events-none -z-10" />
 
@@ -32,7 +34,7 @@ export default function Testimonials() {
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">Real Riders. <span className="text-gradient">Real Progress.</span></h2>
                     <p className="text-slate-400 text-xl">
-                        From getting back on the bike to building a steady routine, see how everyday riders use PeakReady in real life.
+                        From consistency rebuilds to race-day finishes, these are real outcomes from everyday riders.
                     </p>
                 </div>
 
@@ -44,19 +46,27 @@ export default function Testimonials() {
                         >
                             <Quote className="absolute top-6 right-6 w-10 h-10 text-white/5" />
 
-                            <div className="flex items-center gap-1 mb-6">
-                                {[...Array(testimonial.rating)].map((_, i) => (
-                                    <Star key={i} className="w-5 h-5 fill-brand-cyan text-brand-cyan" />
-                                ))}
-                            </div>
+                            {testimonial.tag && (
+                                <span className="inline-flex w-fit mb-4 text-[11px] uppercase tracking-wider text-brand-cyan border border-brand-cyan/40 bg-brand-cyan/10 px-2 py-1 rounded-full">
+                                    {testimonial.tag}
+                                </span>
+                            )}
 
-                            <p className="text-slate-300 leading-relaxed text-lg mb-8 flex-grow">
+                            <p className="text-slate-300 leading-relaxed text-lg mb-6 flex-grow">
                                 &ldquo;{testimonial.text}&rdquo;
                             </p>
 
+                            {testimonial.statLabel && testimonial.statValue && (
+                                <div className="mb-6 bg-slate-900/70 border border-white/10 rounded-lg p-3">
+                                    <p className="text-[11px] uppercase tracking-wider text-slate-400 mb-1">{testimonial.statLabel}</p>
+                                    <p className="text-sm font-semibold text-brand-cyan">{testimonial.statValue}</p>
+                                </div>
+                            )}
+
                             <div>
                                 <div className="font-semibold text-white font-outfit text-lg">{testimonial.name}</div>
-                                <div className="text-brand-cyan text-sm">{testimonial.role}</div>
+                                <div className="text-slate-400 text-sm">{testimonial.location}</div>
+                                <div className="text-brand-cyan text-sm font-medium">{testimonial.riderType}</div>
                             </div>
                         </div>
                     ))}
@@ -65,3 +75,4 @@ export default function Testimonials() {
         </section>
     )
 }
+
